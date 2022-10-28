@@ -1,0 +1,937 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/mainToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layoutDirection="rtl"/>
+    <TextView
+        android:id="@+id/totalStudents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/blue"
+        android:textStyle="bold"
+        android:text="عدد الطلاب الإجمالي : "/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="الطلاب النشطين"
+            android:textColor="@color/black_overlay"
+            android:textSize="16sp" />
+    <lecho.lib.hellocharts.view.LineChartView
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp" />
+    </FrameLayout>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="5dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/btn_education"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:theme="@style/CancelButton">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|center_vertical"
+                    android:layout_marginRight="5dp"
+                    android:text="دورات مناهج التربية السورية"
+                    android:textColor="@color/red"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="8dp"
+                    android:text="مراحل التعليم الأساسي والثانوي"
+                    android:textColor="@color/spec_black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="10dp"
+                    android:layoutDirection="rtl"
+                    android:orientation="vertical">
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:weightSum="10">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="- عدد الدراسات:"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/eduStudy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="0"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:weightSum="10">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="- عدد الأساتذة:"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/eduTeacher"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="0"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:weightSum="10">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="- عدد المواد الإجمالي:"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/eduSubject"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="0"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:weightSum="10">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="- عدد الطلاب:"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/eduStudent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="0"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_vertical"
+                android:padding="8dp"
+                android:src="@mipmap/ic_education" />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:background="@color/black_overlay" />
+
+        <LinearLayout
+            android:id="@+id/btn_coding"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:theme="@style/AddNewPayment">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|right|center_vertical"
+                    android:layout_marginRight="5dp"
+                    android:text="دورات البرمجة والتطوير"
+                    android:textColor="@color/darker_orange"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="8dp"
+                    android:text="خوارزميات, Java, C++, Android"
+                    android:textColor="@color/spec_black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="10dp"
+                    android:layoutDirection="rtl"
+                    android:orientation="vertical">
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:weightSum="10">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="- عدد الدراسات:"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="0"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:weightSum="10">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="- عدد الأساتذة:"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="0"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:weightSum="10">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="- عدد المواد الإجمالي:"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="0"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:weightSum="10">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="- عدد الطلاب:"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="0"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/ic_coding" />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:background="@color/black_overlay" />
+
+        <LinearLayout
+            android:id="@+id/btn_designing"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:theme="@style/AddNewPurBill">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|right|center_vertical"
+                    android:layout_marginRight="5dp"
+                    android:text="دورات التصميم والرسم"
+                    android:textColor="@color/blue"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="8dp"
+                    android:text="أساسيات التصميم, Photoshop, Illistrator"
+                    android:textColor="@color/spec_black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="10dp"
+                    android:layoutDirection="rtl"
+                    android:orientation="vertical">
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:weightSum="10">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="- عدد الدراسات:"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="0"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:weightSum="10">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="- عدد الأساتذة:"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="0"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:weightSum="10">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="- عدد المواد الإجمالي:"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="0"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:weightSum="10">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="- عدد الطلاب:"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="0"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:padding="2dp"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/ic_designing" />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:background="@color/black_overlay" />
+
+        <LinearLayout
+            android:id="@+id/btn_english"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:theme="@style/AddNewCustomer">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|right|center_vertical"
+                    android:layout_marginRight="5dp"
+                    android:text="دورات اللغة الإنكليزية"
+                    android:textColor="@color/yellow"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="15dp"
+                    android:text="English 1,2,3,4,5,6"
+                    android:textColor="@color/spec_black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="10dp"
+                    android:layoutDirection="rtl"
+                    android:orientation="vertical">
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:weightSum="10">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="- عدد الدراسات:"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="0"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:weightSum="10">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="- عدد الأساتذة:"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="0"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:weightSum="10">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="- عدد المواد الإجمالي:"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="0"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:weightSum="10">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="- عدد الطلاب:"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="0"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:padding="2dp"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/ic_english" />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:background="@color/black_overlay" />
+
+        <LinearLayout
+            android:id="@+id/btn_arts"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:theme="@style/AddNewSalesBill">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|right|center_vertical"
+                    android:layout_marginRight="5dp"
+                    android:text="دورات المهن والحرف"
+                    android:textColor="@color/purple"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="8dp"
+                    android:text="الحلاقة, الخياطة, صيانة الموبايل"
+                    android:textColor="@color/spec_black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="10dp"
+                    android:layoutDirection="rtl"
+                    android:orientation="vertical">
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:weightSum="10">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="- عدد الدراسات:"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="0"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:weightSum="10">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="- عدد الأساتذة:"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="0"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:weightSum="10">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="- عدد المواد الإجمالي:"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="0"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:weightSum="10">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="- عدد الطلاب:"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="0"
+                            android:textColor="@color/spec_black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:padding="2dp"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/ic_arts" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>
+    </LinearLayout>
+
+<FrameLayout
+android:id="@+id/loadingFrame"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#CC000000">
+
+<ProgressBar
+    style="?android:attr/progressBarStyleLarge"
+    android:layout_width="80dp"
+    android:layout_height="80dp"
+    android:layout_gravity="center" />
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginTop="65dp"
+    android:text="تحميل الممعلومات..."
+    android:textColor="@color/orange"
+    android:textSize="21sp"
+    android:textStyle="bold" />
+</FrameLayout>
+</FrameLayout>

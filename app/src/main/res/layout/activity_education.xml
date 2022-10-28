@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EducationActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/mainToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layoutDirection="rtl"/>
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/orange"
+        android:textStyle="bold"
+        android:text="عدد الطلاب"/>
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/chart"
+        android:layout_width="fill_parent"
+        android:layout_height="250dp"
+        android:background="@color/white"
+        android:paddingEnd="1dp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/viewStudents"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="عرض معلومات الطلاب"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/blue"
+                android:theme="@style/AddNewPurBill" />
+            <Button
+                android:id="@+id/viewTeachers"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="عرض الأساتذة"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/purple"
+                android:theme="@style/AddNewSalesBill" />
+            <Button
+                android:id="@+id/viewSubjects"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="عرض المواد والدروس"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/green"
+                android:theme="@style/AddNewTemBill" />
+            <Button
+                android:id="@+id/viewQues"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="عرض الأسئلة العامة"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/red"
+                android:theme="@style/AddNewExpense" />
+            <Button
+                android:id="@+id/signStudent"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="تسجيل طالب جديد"
+                android:textColor="@color/light_green"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:theme="@style/AddNewSubject" />
+
+            <Button
+                android:id="@+id/signTeacher"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="تسجيل أستاذ جديد"
+                android:textColor="@color/darker_orange"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:theme="@style/AddNewPayment" />
+            <Button
+                android:id="@+id/addLesson"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="إضافة درس لمادة"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:theme="@style/SaveButton" />
+            <Button
+                android:id="@+id/addTut"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="إضافة درس تعريفي مجاني"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:theme="@style/SaveButton" />
+            <Button
+                android:id="@+id/sendAd"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="إرسال إعلان"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:theme="@style/SaveButton" />
+            <Button
+                android:id="@+id/viewBills"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="كشف حسابات الطلاب"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:theme="@style/SaveButton" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
